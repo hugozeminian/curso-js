@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extrangeiro ou Brasileiro</title>
+    <style> /*  ###- CSS -###  */
+        body{
+            font: normal 18pt Arial;
+            background-color: hsl(195, 100%, 50%);
+        }
+        input{
+                font: normal 18pt Arial;
+                width: auto;
+        }
+        div#answer_id{
+            margin-top: 20px;
+            color: blue;
+        }
+            
+
+    </style>
+
+</head>
+<body> <!--  ###- HTML -###  -->
+    <h1>Are you Brasilian or Foreigner?</h1>
+    Type in the field: <input type="text" name="" id="txtnat_id">
+    <input type="button" value="send" onclick="verify()">
+    <div id="answer_id">
+        
+    </div>
+    
+    <script> //   ###- JavaScript - ####
+        function verify() {
+            var txtnat = window.document.querySelector('input#txtnat_id')
+            var answer = window.document.querySelector('div#answer_id')
+
+            answer.innerHTML = `<p>You said <strong>${txtnat.value}</strong></p>`
+            if(txtnat.value == "Brasilian"){
+                answer.innerHTML += `<p>You are from <strong>Brazil</strong></p>`
+            }else{
+                answer.innerHTML += `<p>Oh, you are a foreigner. <strong>What country are you from?</strong></p>`
+            }
+        }
+    </script>
+
+</body>
+</html>
